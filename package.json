@@ -1,0 +1,30 @@
+{
+  "name": "semester_project2",
+  "version": "0.0.1",
+  "description": "A package for my second semester project, creating a front-end appliccation for an auctionhouse API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinthoresen/semester_project2.git"
+  },
+  "keywords": [
+    "auction",
+    "auctionhouse"
+  ],
+  "author": "Martin Thoresen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinthoresen/semester_project2/issues"
+  },
+  "homepage": "https://github.com/martinthoresen/semester_project2#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "devDependencies": {
+    "sass": "^1.58.3"
+  }
+}
