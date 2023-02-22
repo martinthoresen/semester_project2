@@ -1,1 +1,16 @@
-@import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+$theme-colors: (
+  "primary": #66311b,
+  "secondary": #fff9f6,
+  "danger": #9c0010,
+  "info": #f4914c,
+);
+
+body {
+  background-image: url("/src/images/background-pattern.png");
+  color: #66311b;
+}
+h1 {
+  color: #f4914c;
+}
