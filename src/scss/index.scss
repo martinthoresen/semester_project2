@@ -10,7 +10,24 @@ $theme-colors: (
 body {
   background-image: url("/src/images/background-pattern.png");
   color: #66311b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 h1 {
-  color: #f4914c;
+  color: #021226;
+}
+
+footer {
+  background-color: #021226;
+  padding: 5em;
+  margin-top: auto;
+}
+footer p {
+  text-align: center;
+  color: #fff9f6;
+}
+.navbar-toggler {
+  border: none;
+  color: #021226;
 }
