@@ -31,3 +31,16 @@ footer p {
   border: none;
   color: #021226;
 }
+
+.btn {
+  border-radius: 0;
+  border: none;
+  background-color: #f4914c;
+  color: #021226;
+}
+.btn:hover {
+  background-color: #66311b;
+}
+.form-control {
+  border-radius: 0;
+}
