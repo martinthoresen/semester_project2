@@ -48,3 +48,13 @@ footer p {
   border-right: none;
   border-left: none;
 }
+
+.form-control:focus {
+  border-radius: 0;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-shadow: none;
+  border-color: #021226;
+}
