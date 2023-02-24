@@ -58,3 +58,7 @@ footer p {
   box-shadow: none;
   border-color: #021226;
 }
+
+.navbar-toggler:focus {
+  border-radius: 0;
+}
