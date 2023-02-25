@@ -21,6 +21,9 @@ h1 {
   font-weight: 600;
 }
 
+.navbar {
+  border-bottom: 1px solid;
+}
 footer {
   background-color: #021226;
   padding: 5em;
@@ -62,6 +65,17 @@ footer p {
   border-color: #021226;
 }
 
-.navbar-toggler:focus {
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
   border-radius: 0;
+  border: 1px solid;
+}
+
+.card {
+  border-radius: 0;
+  border: 0;
+  background-color: #fff9f6;
 }

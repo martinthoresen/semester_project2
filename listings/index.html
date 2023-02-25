@@ -39,11 +39,26 @@
     </header>
     <div class="container">
       <div class="row flex-wrap">
-        <div class="col bg-light mx-2 py-5">
+        <div class="col-lg-9 bg-light py-5">
           <h1>Listings</h1>
-          <div class="listings-container"></div>
+          <div class="listings-container">
+            <div class="card p-3 mb-5 container" id="post-card">
+              <a href="/post/index.html?id=${post.id}" class="text-decoration-none text-black d-flex flex-lg-row">
+                <img class="img-fluid w-50" src="https://i.ebayimg.com/images/g/i6kAAOSwsNFgpaSI/s-l1600.jpg" />
+                <div>
+                  <h3 class="card-title">Greek Vase</h3>
+                  <p class="text-secondary">auction id: 3223</p>
+                  <p>A beautiful greek vase from the 13th century.</p>
+                </div>
+                <div>
+                  <p class="text-primary">by: Ola Nordmann</p>
+                  <p class="text-secondary">greek, vase</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="col bg-light mx-2">
+        <div class="col bg-light py-5">
           <h3>Soon Ending</h3>
         </div>
       </div>
