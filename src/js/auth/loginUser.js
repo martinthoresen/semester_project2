@@ -1,5 +1,5 @@
 import { API_BASE_URL } from "../constants/constants.js";
-export const loginUrl = `${API_BASE_URL}/social/auth/login`;
+export const loginUrl = `${API_BASE_URL}/auction/auth/login`;
 import { saveKey } from "../storage/local-storage.js";
 import { displayMessage } from "../utils/displayMessage.js";
 
