@@ -15,12 +15,15 @@ body {
   min-height: 100vh;
   font-family: "Lato", sans-serif;
 }
-h1 {
+h1,
+h3 {
   color: #021226;
   font-family: "Playfair Display", serif;
   font-weight: 600;
 }
-
+h3 {
+  font-weight: 400;
+}
 .navbar {
   border-bottom: 1px solid;
 }

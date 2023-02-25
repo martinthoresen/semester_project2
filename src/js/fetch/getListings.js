@@ -1,6 +1,5 @@
 export async function getListings(url) {
   try {
-    const token = loadKey("accessToken");
     const getData = {
       method: "GET",
     };
