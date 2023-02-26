@@ -1,4 +1,5 @@
-const listingContainer = document.querySelector("#listings-container");
+export const listingContainer = document.querySelector("#listings-container");
+
 export function populateListing(listing) {
   const singleListing = document.createElement("div");
   listingContainer.appendChild(singleListing);
