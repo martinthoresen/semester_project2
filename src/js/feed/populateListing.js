@@ -3,19 +3,20 @@ export function populateListing(listing) {
   const singleListing = document.createElement("div");
   listingContainer.appendChild(singleListing);
   singleListing.innerHTML = `<div class="card p-3 mb-5 container" id="listing-card">
-  <a href="/post/index.html?id=${listing.id}" class="text-decoration-none text-black d-flex flex-lg-row">
-    <img class="img-fluid w-25" src="${listing.media}" />
+  <a href="/post/index.html?id=${listing.id}" class="text-decoration-none text-black">
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <img class="listing-image" src="${listing.media}" />
     <div class="p-3">
       <h3>${listing.title}</h3>
-      <p>${listing.body}</p>
+      <p>${listing.description}</p>
       <p>Tags: ${listing.tags}</p>
     </div>
     <div class="p-3">
       <p>Seller information:</p>
-      <img src="${listing.seller}" />
-      <p></p>
-      <p></p>
+      <img class="seller-avatar" src="${listing.seller.avatar}" />
+      <p>${listing.seller.name}</p>
     </div>
+   </div> 
   </a>
 </div>`;
 }
