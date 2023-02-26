@@ -16,15 +16,18 @@ body {
   font-family: "Lato", sans-serif;
 }
 h1,
+h2,
 h3 {
   color: #021226;
   font-family: "Playfair Display", serif;
   font-weight: 600;
 }
+h2 {
+  font-weight: 400;
+}
 h3 {
   font-weight: 400;
 }
-
 h1::after {
   display: block;
   position: relative;

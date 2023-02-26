@@ -14,7 +14,7 @@ export function populateListing(listing) {
   <div class="d-flex flex-column flex-md-row justify-content-between">
     <img class="listing-image" src="${listing.media}" />
     <div class="container d-flex row">
-      <h3>${listing.title}</h3>
+      <h2>${listing.title}</h2>
       <p class="mt-3">${listing.description}</p>
       <p class="align-self-end">Tags: ${listing.tags}</p>
     </div>
