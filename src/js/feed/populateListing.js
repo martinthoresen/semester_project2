@@ -7,12 +7,12 @@ export function populateListing(listing) {
   <a href="/post/index.html?id=${listing.id}" class="text-decoration-none text-black">
   <div class="d-flex flex-column flex-md-row justify-content-between">
     <img class="listing-image" src="${listing.media}" />
-    <div class="p-3">
+    <div>
       <h3>${listing.title}</h3>
       <p>${listing.description}</p>
       <p>Tags: ${listing.tags}</p>
     </div>
-    <div class="p-3">
+    <div>
       <p>Seller information:</p>
       <img class="seller-avatar" src="${listing.seller.avatar}" />
       <p>${listing.seller.name}</p>

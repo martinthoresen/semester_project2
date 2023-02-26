@@ -4,7 +4,9 @@ import { toggleSpinner } from "../utils/toggleSpinner.js";
 import { populateListing } from "./populateListing.js";
 import { listingContainer } from "./populateListing.js";
 
-const listingsArray = await getListings(API_BASE_URL + "/auction/listings?_active=true&_seller=true");
+const url = API_BASE_URL + "/auction/listings?_active=true&_seller=true";
+
+const listingsArray = await getListings(url);
 
 toggleSpinner(listingContainer);
 listingsArray.forEach((element) => {
