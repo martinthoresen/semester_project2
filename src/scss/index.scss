@@ -82,3 +82,15 @@ footer p {
   border: 0;
   background-color: #fff9f6;
 }
+
+.seller-avatar {
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+}
+
+.listing-image {
+  width: 10em;
+  height: 15em;
+  object-fit: cover;
+}
