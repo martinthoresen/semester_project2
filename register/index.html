@@ -33,10 +33,9 @@
       </nav>
     </header>
     <main>
-      <div class="container bg-light">
-        <h1 class="text-center">Welcome to Midlands Auctionhouse</h1>
-        <h2 class="text-center my-3 p-3">Register</h2>
-        <form method="post" id="login-form" action="login" class="d-flex flex-column gap-3 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto">
+      <div class="container bg-light col-lg-6 py-5">
+        <h1 class="text-center">Register</h1>
+        <form method="post" id="login-form" action="login" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
           <div class="form-group">
             <label for="post-title">Email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="example@stud.noroff.no" />
@@ -49,8 +48,8 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" />
           </div>
-          <button type="submit" class="btn btn-primary">Log in</button>
-          <div id="login-container" class="text-center"></div>
+          <button type="submit" class="btn btn-primary">Register Account</button>
+          <div id="register-container" class="text-center"></div>
           <p>Already have an account? <a href="/login">Login here...</a></p>
         </form>
       </div>
