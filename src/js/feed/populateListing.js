@@ -1,3 +1,4 @@
+import { CountDownTimer } from "../utils/countdown.js";
 export const listingContainer = document.querySelector("#listings-container");
 
 export function populateListing(listing) {
@@ -23,6 +24,7 @@ export function populateListing(listing) {
       <p class="text-secondary">created: ${localCreated}</p>
       <p class="text-secondary">updated: ${localUpdated}</p>
       <p class="text-secondary">ends at: ${localEndsAt}</p>
+      <p id="${listing.id}"></p>
       </div>
       <p>Seller information:</p>
       <img class="seller-avatar" src="${listing.seller.avatar}" />
@@ -31,4 +33,5 @@ export function populateListing(listing) {
    </div> 
   </a>
 </div>`;
+  CountDownTimer(endsAt, listing.id);
 }
