@@ -1,1 +1,1 @@
-import * as loginUser from "../auth/loginUser.js";
+import * as loginUser from "./loginUser.js";

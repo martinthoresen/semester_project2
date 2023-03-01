@@ -1,7 +1,7 @@
-import { API_BASE_URL } from "../constants/constants.js";
+import { API_BASE_URL } from "../../constants/constants.js";
 export const loginUrl = `${API_BASE_URL}/auction/auth/login`;
-import { saveKey } from "../storage/local-storage.js";
-import { displayMessage } from "../utils/displayMessage.js";
+import { saveKey } from "../../storage/local-storage.js";
+import { displayMessage } from "../../utils/displayMessage.js";
 
 const loginForm = document.querySelector("#login-form");
 const loginContainer = document.querySelector("#login-container");
