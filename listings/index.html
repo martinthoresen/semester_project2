@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../src/js/feed/index.mjs" defer type="module"></script>
+    <script src="../src/js/index.mjs" defer type="module"></script>
     <title>Listings | Midlands Auctionhouse</title>
   </head>
   <body>
@@ -25,13 +26,22 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../listings/">Listings</a>
+                <p class="nav-link" id="loggedin-credit">Your Credit: 1020</p>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../profile/">Your Profile</a>
+                <a class="nav-link" id="loggedin-newlisting" href="../new-listing"><i class="fa-solid fa-plus"></i> New Listing</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-danger" href="#">Log out</a>
+                <a class="nav-link" href="../listings">Listings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../profile" id="loggedin-profile">Your Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="#" id="loggedin-logout">Log out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../login/" id="loggedin-login"></a>
               </li>
             </ul>
           </div>
