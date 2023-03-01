@@ -8,7 +8,7 @@ const specificListingContainer = document.querySelector("#specific-listing-conta
 export function populateListingContent(listing) {
   const singleListing = document.createElement("div");
   specificListingContainer.appendChild(singleListing);
-
+  document.title = `${listing.title} | The Midlands Auctionhouse`;
   singleListing.innerHTML = `<div class="card p-5 mb-5 border-0" id="post-card">
   <h3 class="card-title">${listing.title}</h3>
   <img src="${listing.media}" />
