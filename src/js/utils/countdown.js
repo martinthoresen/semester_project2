@@ -24,7 +24,7 @@ export function CountDownTimer(endDate, id) {
     document.getElementById(id).innerHTML = days + " days, ";
     document.getElementById(id).innerHTML += hours + " hours, ";
     document.getElementById(id).innerHTML += minutes + " minutes and ";
-    document.getElementById(id).innerHTML += seconds + " seconds.";
+    document.getElementById(id).innerHTML += seconds + " seconds left.";
   }
 
   timer = setInterval(showRemaining, 1000);
