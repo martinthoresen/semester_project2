@@ -8,13 +8,13 @@ const logIn = document.querySelector("#loggedin-login");
 
 export function isLoggedIn() {
   const token = loadKey("accessToken");
-  if (!token) {
-    logOut.innerHTML = "";
-    yourProfile.innerHTML = "";
-    newListing.innerHTML = "";
-    credit.innerHTML = "";
-    logIn.innerHTML = "Log in";
+  if (token) {
+    logOut.innerHTML = "Log Out";
+    yourProfile.innerHTML = "Profile";
+    newListing.innerHTML = `<i class="fa-solid fa-plus"></i> New Listing`;
+    credit.innerHTML = "Your Credit: 1020";
+    logIn.innerHTML = "";
   } else {
-    console.log("User is logged in.");
+    logIn.innerHTML = "Log In";
   }
 }
