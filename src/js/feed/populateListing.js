@@ -10,8 +10,8 @@ export function populateListing(listing) {
   const endsAt = new Date(listing.endsAt);
   const localEndsAt = endsAt.toLocaleString("no-NO", { timeZone: "UTC" });
   listingContainer.appendChild(singleListing);
-  singleListing.innerHTML = `<div class="card  mb-5 " id="listing-card">
-  <a href="/post/index.html?id=${listing.id}" class="text-decoration-none text-black">
+  singleListing.innerHTML = `<div class="card mb-5" id="listing-card">
+  <a href="/listing/index.html?id=${listing.id}" class="text-decoration-none text-black">
   <div class="d-flex flex-column flex-md-row justify-content-between">
     <img class="listing-image" src="${listing.media}" />
     <div class="container d-flex row">

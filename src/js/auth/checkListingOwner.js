@@ -1,4 +1,4 @@
-import { loadKey } from "../storage/local-storage.mjs";
+import { loadKey } from "../storage/local-storage.js";
 
 export function checkListingOwner(listing) {
   var loggedInEmail = loadKey("data").email;
