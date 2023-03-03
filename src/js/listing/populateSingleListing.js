@@ -2,21 +2,41 @@ import { checkListingOwner } from "../auth/checkListingOwner.js";
 import { putFetchWithToken } from "../fetch/updateListing.js";
 import { API_BASE_URL } from "../constants/constants.js";
 import { displayAuthorizedButtons } from "../utils/authorizedButtons.js";
-
+import { CountDownTimer } from "../utils/countdown.js";
 const specificListingContainer = document.querySelector("#specific-listing-container");
 
 export function populateListingContent(listing) {
   const singleListing = document.createElement("div");
+  const endsAt = new Date(listing.endsAt);
   specificListingContainer.appendChild(singleListing);
+
   document.title = `${listing.title} | The Midlands Auctionhouse`;
   singleListing.innerHTML = `<div class="card p-5 mb-5 border-0" id="post-card">
   <h3 class="card-title">${listing.title}</h3>
   <img src="${listing.media}" />
   <p class="text-black mt-2"> by: @${listing.seller.name}</p>
   <p class="my-2">${listing.description}</p>
-  <div>${listing._count.bids}</div>
+  <p id="${listing.id}"></p>
+  <form method="post" id="bid" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
+  <div class="form-group">
+    <label for="post-title">Bid Amount</label>
+    <input type="number" class="form-control" id="bid-value" name="bid-value" />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit Bid</button>
+</form>
+  <h2>Bids:</h2>
+  <div id="bids-container"></div>
   </div>`;
-
+  CountDownTimer(endsAt, listing.id);
+  listing.bids.forEach((element) => {
+    const bidsContainer = document.querySelector("#bids-container");
+    const singleBid = document.createElement("div");
+    singleBid.innerHTML = `
+    <h4>${element.bidderName}</h4>
+    <p>Bid amount: ${element.amount}</p>
+    `;
+    bidsContainer.appendChild(singleBid);
+  });
   if (checkListingOwner(listing)) {
     singleListing.innerHTML = `<div class="card p-5 mb-5 bg-white shadow border-0" id="post-card">
     <h1 class="text-center" >Edit post</h1> 

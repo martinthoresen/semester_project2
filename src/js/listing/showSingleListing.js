@@ -5,6 +5,6 @@ import { populateListingContent } from "../listing/populateSingleListing.js";
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const singleListing = await getListings(API_BASE_URL + "/auction/listings/" + id + "?_active=true&_seller=true");
+const singleListing = await getListings(API_BASE_URL + "/auction/listings/" + id + "?_active=true&_seller=true&_bids=true");
 
 populateListingContent(singleListing);
