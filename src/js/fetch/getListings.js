@@ -5,6 +5,7 @@ export async function getListings(url) {
     };
     const response = await fetch(url, getData);
     const json = await response.json();
+    console.log(json);
     return json;
   } catch (error) {
     console.log(error);

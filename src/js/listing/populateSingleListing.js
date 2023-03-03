@@ -14,6 +14,7 @@ export function populateListingContent(listing) {
   <img src="${listing.media}" />
   <p class="text-black mt-2"> by: @${listing.seller.name}</p>
   <p class="my-2">${listing.description}</p>
+  <div>${listing._count.bids}</div>
   </div>`;
 
   if (checkListingOwner(listing)) {
