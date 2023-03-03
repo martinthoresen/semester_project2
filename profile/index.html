@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../src/js/index.mjs" defer type="module"></script>
-    <script src="../src/js/profile.mjs" defer type="module"></script>
+    <script src="../src/js/profile/index.mjs" defer type="module"></script>
     <title>Your Profile | Midlands Auctionhouse</title>
   </head>
   <body>
@@ -26,13 +26,22 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="../listings/">Listings</a>
+                <p class="nav-link" id="loggedin-credit"></p>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../profile/">Your Profile</a>
+                <a class="nav-link" id="loggedin-newlisting" href="../new-listing"></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-danger" href="#">Log out</a>
+                <a class="nav-link" href="../listings">Listings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../profile" id="loggedin-profile"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="#" id="loggedin-logout"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../login/" id="loggedin-login"></a>
               </li>
             </ul>
           </div>
@@ -47,10 +56,12 @@
             <div class="col-4">
               <img src="../src/images/stripes-light.png" alt="Your profile picture" class="card-img" />
             </div>
-            <div class="col-4">
-              <p class="text-secondary">Hello,</p>
-              <h2>Martin Thoresen</h2>
-              <p>Your Credit: 1020</p>
+            <div id="profile-container">
+              <div class="col-4">
+                <p class="text-secondary">Hello,</p>
+                <h2>Martin Thoresen</h2>
+                <p>Your Credit: 1020</p>
+              </div>
             </div>
           </div>
           <h2 class="my-3">Your Listings</h2>
