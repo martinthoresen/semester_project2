@@ -17,13 +17,11 @@ async function loginUser(url, data) {
     };
     const response = await fetch(url, postData);
     const json = await response.json();
-    console.log(json);
 
     if (response.ok === true) {
-      console.log(response);
       const accessToken = json.accessToken;
       saveKey("accessToken", accessToken);
-      saveKey("data", data);
+      saveKey("data", json);
       window.location.replace("/listings");
     } else {
       displayMessage(loginContainer, json.errors[0].message, "danger");
