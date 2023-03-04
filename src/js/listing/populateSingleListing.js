@@ -58,7 +58,7 @@ export function populateListingContent(listing) {
       <input type="text" class="form-control" name="title" placeholder="Write a title for your listing..." required value="${listing.title}" />
     </div>
     <div class="form-group">
-      <label for="descrription">Description</label>
+      <label for="description">Description</label>
       <textarea id="description" maxlength="150" name="description" cols="" rows="6" class="form-control" >${listing.description}</textarea>
     </div>
     <div class="form-group">
@@ -75,10 +75,12 @@ export function populateListingContent(listing) {
     </div>`;
 
     const listingId = listing.id;
+
     const updateListing = document.querySelector("#submit-edited-listing");
-    updateListing.addEventListener("submit", (event) => {
+    const updateForm = document.querySelector("#create-post");
+    updateListing.addEventListener("click", (event) => {
       event.preventDefault();
-      const formData = event.target;
+      const formData = updateForm;
       const title = formData.title.value;
       const description = formData.description.value;
       const tagsString = formData.tags.value;
@@ -90,7 +92,7 @@ export function populateListingContent(listing) {
         tags,
         media,
       };
-      console.log(listing.id);
+
       putFetchWithToken(API_BASE_URL + `/auction/listings/${listingId}`, post);
     });
   }
