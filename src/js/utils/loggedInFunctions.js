@@ -13,7 +13,7 @@ export function isLoggedIn() {
   if (token) {
     logOut.innerHTML = "Log Out";
     yourProfile.innerHTML = "Profile";
-    newListing.innerHTML = `<i class="fa-solid fa-plus"></i> New Listing`;
+    newListing.innerHTML = `<i class="fa-solid fa-plus small"></i> New Listing`;
     credit.innerHTML = `Your Credit: ${userCredit}`;
     logIn.innerHTML = "";
   } else {
