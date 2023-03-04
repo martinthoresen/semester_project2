@@ -1,4 +1,7 @@
+import { loadKey } from "../storage/local-storage.js";
+
 export async function getUser(url) {
+  const token = loadKey("accessToken");
   try {
     const getData = {
       method: "GET",
