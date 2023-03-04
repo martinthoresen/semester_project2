@@ -3,6 +3,7 @@ import { putFetchWithToken } from "../fetch/updateListing.js";
 import { API_BASE_URL } from "../constants/constants.js";
 import { displayAuthorizedButtons } from "../utils/authorizedButtons.js";
 import { CountDownTimer } from "../utils/countdown.js";
+import { postBidWithToken } from "../fetch/makeBid.js";
 const specificListingContainer = document.querySelector("#specific-listing-container");
 
 export function populateListingContent(listing) {
@@ -17,13 +18,13 @@ export function populateListingContent(listing) {
   <p class="text-black mt-2"> by: @${listing.seller.name}</p>
   <p class="my-2">${listing.description}</p>
   <p id="${listing.id}"></p>
-  <form method="post" id="bid" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
+  <div id="bid" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
   <div class="form-group">
-    <label for="post-title">Bid Amount</label>
+    <label for="bid-value">Bid Amount</label>
     <input type="number" class="form-control" id="bid-value" name="bid-value" />
   </div>
-  <button type="submit" class="btn btn-primary">Submit Bid</button>
-</form>
+  <button class="btn btn-primary" id="submit-bid">Submit Bid</button>
+</div>
   <h2>Bids:</h2>
   <div id="bids-container"></div>
   </div>`;
@@ -37,11 +38,21 @@ export function populateListingContent(listing) {
     `;
     bidsContainer.appendChild(singleBid);
   });
+
+  const submitBid = document.querySelector("#submit-bid");
+  submitBid.addEventListener("click", (event) => {
+    event.preventDefault();
+    const bidValue = document.querySelector("#bid-value");
+    const formattedBidValue = Number(bidValue.value);
+    console.log(formattedBidValue);
+    postBidWithToken(API_BASE_URL + "/auction/listings/" + listing.id + "/bids", formattedBidValue);
+  });
+
   if (checkListingOwner(listing)) {
     singleListing.innerHTML = `<div class="card p-5 mb-5 bg-white shadow border-0" id="post-card">
     <h1 class="text-center" >Edit post</h1> 
     <form class="flex-column align-items-stretch gap-3 p-4 rounded-2 sticky-lg-top" id="create-post">
-    ID: ${listing.id}
+    <p id="${listing.id}"></p>
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" name="title" placeholder="Write a title for your listing..." required value="${listing.title}" />
@@ -62,7 +73,7 @@ export function populateListingContent(listing) {
     <button id="submit-edited-listing" class="btn btn-primary my-3">Submit changes</button>
   </form>
     </div>`;
-    displayAuthorizedButtons(listing, singleListing);
+
     const listingId = listing.id;
     const updateListing = document.querySelector("#submit-edited-listing");
     updateListing.addEventListener("submit", (event) => {
