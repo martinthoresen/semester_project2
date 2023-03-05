@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create a new auction listing at the Midlands Auctionhouse" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../src/js/index.mjs" defer type="module"></script>
+    <script src="../src/js/new-listing/index.mjs" defer type="module"></script>
+    <title>New Listing | Midlands Auctionhouse</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../listings"><img src="../src/images/midlands-logo.png" alt="Logo of the Midlands Auctionhouse" style="width: 12em" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <p class="nav-link" id="loggedin-credit"></p>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" id="loggedin-newlisting" href="../new-listing"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../listings">Listings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../profile" id="loggedin-profile"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="#" id="loggedin-logout"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../login/" id="loggedin-login"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="d-flex flex-wrap col-8 m-auto">
+      <div class="col bg-light p-3">
+        <form class="flex-column align-items-stretch rounded-2 sticky-lg-top" id="create-listing">
+          <h1>Create a new listing</h1>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Write a title for your post..." required />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" maxlength="150" name="description" cols="" rows="6" class="form-control" placeholder="Write your a description... (max 150 characters)"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="media">Media</label>
+            <input type="text" class="form-control" name="media" placeholder="Insert media URL here..." />
+          </div>
+          <div class="form-group">
+            <label for="post-tags">Tags</label>
+            <input type="text" class="form-control" name="tags" placeholder="(Separated by space) e.g. food travel politics " />
+          </div>
+          <div class="form-group">
+            <label for="endsAt">End Date</label>
+            <input type="datetime-local" class="form-control" name="endsAt" required />
+          </div>
+          <button type="submit" id="submit-listing" class="btn btn-primary my-3">Upload Listing</button>
+          <p id="new-listing-container"></p>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <p>© 2023 Midlands Auctionhouse | All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

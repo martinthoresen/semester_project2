@@ -1,20 +1,18 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-$theme-colors: (
-  "primary": #66311b,
-  "secondary": #fff9f6,
-  "danger": #9c0010,
-  "info": #f4914c,
-);
-
+@import url(/Users/martinthoresen/semester_project2/node_modules/bootstrap/dist/css/bootstrap.min.css);
 body {
   background-image: url("/src/images/background-pattern.png");
   color: #66311b;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   font-family: "Lato", sans-serif;
 }
+
 h1,
 h2,
 h3 {
@@ -22,12 +20,15 @@ h3 {
   font-family: "Playfair Display", serif;
   font-weight: 600;
 }
+
 h2 {
   font-weight: 400;
 }
+
 h3 {
   font-weight: 400;
 }
+
 h1::after {
   display: block;
   position: relative;
@@ -38,22 +39,27 @@ h1::after {
   content: "";
   border: 1px solid #021226;
 }
+
 .navbar {
   border-bottom: 1px solid;
 }
+
 .nav-item {
   font-family: "Playfair Display", serif;
   font-size: 1.3em;
 }
+
 footer {
   background-color: #021226;
   padding: 5em;
   margin-top: auto;
 }
+
 footer p {
   text-align: center;
   color: #fff9f6;
 }
+
 .navbar-toggler {
   border: none;
   color: #021226;
@@ -64,11 +70,14 @@ footer p {
   border: none;
   background-color: #f4914c;
   color: #021226;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .btn:hover {
   background-color: #66311b;
 }
+
 .form-control {
   border-radius: 0;
   background: transparent;
@@ -83,7 +92,8 @@ footer p {
   border-top: none;
   border-right: none;
   border-left: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-color: #021226;
 }
 
@@ -91,7 +101,8 @@ footer p {
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
   outline: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-radius: 0;
   border: 1px solid;
 }
@@ -105,16 +116,19 @@ footer p {
 .seller-avatar {
   width: 4em;
   height: 4em;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .listing-image {
   width: 10em;
   height: 15em;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #soon-ending {
   border-bottom: 1px solid #021226;
   padding: 0.5em;
 }
+/*# sourceMappingURL=index.css.map */
