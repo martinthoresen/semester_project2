@@ -1,6 +1,6 @@
 {
   "name": "semester_project2",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "A package for my second semester project, creating a front-end appliccation for an auctionhouse API.",
   "main": "index.js",
   "scripts": {
