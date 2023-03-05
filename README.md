@@ -1,7 +1,6 @@
 # Midlands Auctionhouse
 
 
-[Midlands Auctionhouse - Live Site](#)
 
 
 ## Description
