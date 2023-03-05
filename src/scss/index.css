@@ -1,10 +1,134 @@
-@import url(c:\Users\Martin\Desktop\noroff\semester_project2\node_modules\bootstrap\dist\css\bootstrap.min.css);
+@import url(/Users/martinthoresen/semester_project2/node_modules/bootstrap/dist/css/bootstrap.min.css);
 body {
   background-image: url("/src/images/background-pattern.png");
   color: #66311b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
 }
 
-h1 {
-  color: #f4914c;
+h1,
+h2,
+h3 {
+  color: #021226;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+h1::after {
+  display: block;
+  position: relative;
+  left: -13px;
+  width: 10%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  content: "";
+  border: 1px solid #021226;
+}
+
+.navbar {
+  border-bottom: 1px solid;
+}
+
+.nav-item {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3em;
+}
+
+footer {
+  background-color: #021226;
+  padding: 5em;
+  margin-top: auto;
+}
+
+footer p {
+  text-align: center;
+  color: #fff9f6;
+}
+
+.navbar-toggler {
+  border: none;
+  color: #021226;
+}
+
+.btn {
+  border-radius: 0;
+  border: none;
+  background-color: #f4914c;
+  color: #021226;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn:hover {
+  background-color: #66311b;
+}
+
+.form-control {
+  border-radius: 0;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.form-control:focus {
+  border-radius: 0;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #021226;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  border: 1px solid;
+}
+
+.card {
+  border-radius: 0;
+  border: 0;
+  background-color: #fff9f6;
+}
+
+.seller-avatar {
+  width: 4em;
+  height: 4em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.listing-image {
+  width: 10em;
+  height: 15em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#soon-ending {
+  border-bottom: 1px solid #021226;
+  padding: 0.5em;
 }
 /*# sourceMappingURL=index.css.map */

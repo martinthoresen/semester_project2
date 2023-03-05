@@ -10,9 +10,10 @@ export async function putMedia(url, mediaUrl) {
         "Content-Type": "application/json; charset=UTF-8",
         Authorization: `Bearer ${token}`,
       },
-      body: { avatar: mediaUrl },
+      body: JSON.stringify({ avatar: mediaUrl }),
     });
     console.log(mediaUrl);
+    console.log(response.body);
     if (response.ok) {
       const messageContainer = document.querySelector("#message-container");
       displayMessage(messageContainer, "Avatar has been updated!", "success");

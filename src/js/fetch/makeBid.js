@@ -1,4 +1,3 @@
-const bidContainer = document.querySelector("#bid-container");
 import { displayMessage } from "../utils/displayMessage.js";
 import { loadKey } from "../storage/local-storage.js";
 export async function postBidWithToken(url, amount) {
@@ -7,17 +6,16 @@ export async function postBidWithToken(url, amount) {
     const response = await fetch(url, {
       method: "POST",
       headers: {
+        "Content-Type": "application/json; charset=UTF-8",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(amount),
+      body: JSON.stringify({ amount: amount }),
     });
     if (response.ok) {
-      console.log(response);
-      displayMessage(bidContainer, "Your bid has been placed!", "success");
+      const bidMessageContainer = document.querySelector("#bid-message-container");
+      displayMessage(bidMessageContainer, "Your bid has been placed!", "success");
     }
   } catch (error) {
-    console.log(error);
-    console.log(response.body);
-    displayMessage(bidContainer, json.errors[0].message, "danger");
+    displayMessage(bidMessageContainer, json.errors[0].message, "danger");
   }
 }

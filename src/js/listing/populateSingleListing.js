@@ -27,6 +27,7 @@ export function populateListingContent(listing) {
     <input type="number" class="form-control" id="bid-value" name="bid-value" />
   </div>
   <button class="btn btn-primary" id="submit-bid">Submit Bid</button>
+  <p id="bid-message-container"></p>
 </form>
   <h2>Bids:</h2>
   <div id="bids-container"></div>
@@ -101,13 +102,13 @@ export function populateListingContent(listing) {
       };
       putFetchWithToken(API_BASE_URL + `/auction/listings/${listingId}`, post);
     });
+    const deleteListingButton = document.querySelector("#delete-listing");
+    const deleteContainer = document.querySelector("#delete-container");
+    deleteListingButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      deleteListing(API_BASE_URL + `/auction/listings/${listing.id}`);
+      displayMessage(deleteContainer, "Post has been deleted!", "success");
+      window.location.replace("/listings");
+    });
   }
-  const deleteListingButton = document.querySelector("#delete-listing");
-  const deleteContainer = document.querySelector("#delete-container");
-  deleteListingButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    deleteListing(API_BASE_URL + `/auction/listings/${listing.id}`);
-    displayMessage(deleteContainer, "Post has been deleted!", "success");
-    window.location.replace("/listings");
-  });
 }
