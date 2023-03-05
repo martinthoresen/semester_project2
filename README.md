@@ -43,7 +43,6 @@ git clone git@github.com:martinthoresen/semester_project2.git
 
 
 ```bash
-- npm i
 - npm run build
 - npm run watch
 ```
