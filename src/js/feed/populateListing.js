@@ -1,4 +1,3 @@
-import { displayAuthorizedButtons } from "../utils/authorizedButtons.js";
 import { CountDownTimer } from "../utils/countdown.js";
 export const listingContainer = document.querySelector("#listings-container");
 

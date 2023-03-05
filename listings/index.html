@@ -52,14 +52,17 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 bg-light py-5 mx-1">
           <h1>Listings</h1>
+          <form class="col-6 my-5 mx-auto" id="search-feed">
+            <div class="d-flex flex-column gap-2 col">
+              <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts by title..." />
+              <button type="button" id="search-submit" class="btn btn-primary">Search</button>
+            </div>
+          </form>
           <div id="listings-container">
             <div class="d-flex justify-content-center">
               <div class="spinner-border mt-5" id="spinner" role="status"></div>
             </div>
           </div>
-        </div>
-        <div class="col bg-light py-5 col-lg-3 mx-1">
-          <h3 id="soon-ending"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i> Soon Ending</h3>
         </div>
       </div>
     </div>

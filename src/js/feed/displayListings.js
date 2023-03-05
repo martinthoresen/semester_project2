@@ -6,7 +6,7 @@ import { listingContainer } from "./populateListing.js";
 
 const url = API_BASE_URL + "/auction/listings?_active=true&_seller=true";
 
-const listingsArray = await getListings(url);
+export const listingsArray = await getListings(url);
 toggleSpinner(listingContainer);
 listingsArray.forEach((element) => {
   populateListing(element);
