@@ -1,3 +1,4 @@
+import { displayAuthorizedButtons } from "../utils/authorizedButtons.js";
 import { CountDownTimer } from "../utils/countdown.js";
 export const listingContainer = document.querySelector("#listings-container");
 
@@ -29,6 +30,7 @@ export function populateListing(listing) {
       <p>Seller information:</p>
       <img class="seller-avatar" src="${listing.seller.avatar}" />
       <p>${listing.seller.name}</p>
+
     </div>
    </div> 
   </a>

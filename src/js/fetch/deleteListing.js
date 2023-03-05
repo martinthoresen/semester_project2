@@ -1,6 +1,6 @@
 import { loadKey } from "../storage/local-storage.js";
 /**
- * Deletes a listing via the API, targeting a link which contans the post ID
+ * Deletes a listing via the API, targeting a link which contains the post ID
  * @param {string} url URL of the listing to delete
  * @example
  * ```js

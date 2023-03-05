@@ -1,19 +1,22 @@
 import { loadKey } from "../storage/local-storage.js";
+import { displayMessage } from "../utils/displayMessage.js";
 
-export async function putMedia(url, avatarUrl) {
-  const token = loadKey("accessToken");
+export async function putMedia(url, mediaUrl) {
   try {
-    const putData = {
+    const token = loadKey("accessToken");
+    const response = await fetch(url, {
       method: "PUT",
-      avatar: avatarUrl,
       headers: {
+        "Content-Type": "application/json; charset=UTF-8",
         Authorization: `Bearer ${token}`,
       },
-    };
-    const response = await fetch(url, putData);
-    const json = await response.json();
-    console.log(json);
-    return json;
+      body: { avatar: mediaUrl },
+    });
+    console.log(mediaUrl);
+    if (response.ok) {
+      const messageContainer = document.querySelector("#message-container");
+      displayMessage(messageContainer, "Avatar has been updated!", "success");
+    }
   } catch (error) {
     console.log(error);
   }

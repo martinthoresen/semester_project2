@@ -1,9 +1,12 @@
 import { checkListingOwner } from "../auth/checkListingOwner.js";
 import { putFetchWithToken } from "../fetch/updateListing.js";
 import { API_BASE_URL } from "../constants/constants.js";
-import { displayAuthorizedButtons } from "../utils/authorizedButtons.js";
 import { CountDownTimer } from "../utils/countdown.js";
 import { postBidWithToken } from "../fetch/makeBid.js";
+import { deleteListing } from "../fetch/deleteListing.js";
+import { displayAuthorizedButtons } from "../utils/authorizedButtons.js";
+import { displayMessage } from "../utils/displayMessage.js";
+import { refresh } from "../utils/refreshPage.js";
 const specificListingContainer = document.querySelector("#specific-listing-container");
 
 export function populateListingContent(listing) {
@@ -18,13 +21,13 @@ export function populateListingContent(listing) {
   <p class="text-black mt-2"> by: @${listing.seller.name}</p>
   <p class="my-2">${listing.description}</p>
   <p id="${listing.id}"></p>
-  <div id="bid" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
+  <form id="bid" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
   <div class="form-group">
     <label for="bid-value">Bid Amount</label>
     <input type="number" class="form-control" id="bid-value" name="bid-value" />
   </div>
   <button class="btn btn-primary" id="submit-bid">Submit Bid</button>
-</div>
+</form>
   <h2>Bids:</h2>
   <div id="bids-container"></div>
   </div>`;
@@ -39,9 +42,10 @@ export function populateListingContent(listing) {
     bidsContainer.appendChild(singleBid);
   });
 
-  const submitBid = document.querySelector("#submit-bid");
-  submitBid.addEventListener("click", (event) => {
+  const submitBid = document.querySelector("#bid");
+  submitBid.addEventListener("submit", (event) => {
     event.preventDefault();
+
     const bidValue = document.querySelector("#bid-value");
     const formattedBidValue = Number(bidValue.value);
     console.log(formattedBidValue);
@@ -71,6 +75,8 @@ export function populateListingContent(listing) {
     </div>
     <p id="message-container"></p>
     <button id="submit-edited-listing" class="btn btn-primary my-3">Submit changes</button>
+    <button id="delete-listing" class="btn btn-primary bg-danger my-3">Delete Post</button>
+    <p id="delete-container"></p>
   </form>
     </div>`;
 
@@ -78,6 +84,7 @@ export function populateListingContent(listing) {
 
     const updateListing = document.querySelector("#submit-edited-listing");
     const updateForm = document.querySelector("#create-post");
+
     updateListing.addEventListener("click", (event) => {
       event.preventDefault();
       const formData = updateForm;
@@ -92,8 +99,15 @@ export function populateListingContent(listing) {
         tags,
         media,
       };
-
       putFetchWithToken(API_BASE_URL + `/auction/listings/${listingId}`, post);
     });
   }
+  const deleteListingButton = document.querySelector("#delete-listing");
+  const deleteContainer = document.querySelector("#delete-container");
+  deleteListingButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    deleteListing(API_BASE_URL + `/auction/listings/${listing.id}`);
+    displayMessage(deleteContainer, "Post has been deleted!", "success");
+    window.location.replace("/listings");
+  });
 }

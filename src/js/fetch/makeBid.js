@@ -8,8 +8,8 @@ export async function postBidWithToken(url, amount) {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
-        Amount: amount,
       },
+      body: JSON.stringify(amount),
     });
     if (response.ok) {
       console.log(response);
@@ -17,7 +17,7 @@ export async function postBidWithToken(url, amount) {
     }
   } catch (error) {
     console.log(error);
-    console.log(response);
+    console.log(response.body);
     displayMessage(bidContainer, json.errors[0].message, "danger");
   }
 }

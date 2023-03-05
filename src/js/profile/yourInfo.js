@@ -15,6 +15,7 @@ profileContainer.innerHTML = `
 <label for="avatar-link">Update avatar link</label>
 <input type="text" class="form-control my-2" id="avatar-link" name="avatar-link" />
 <button class="btn btn-primary" id="upload-avatar">Change Avatar</button>
+<p id="message-container"></p>
 </div>
 <div class="col bg-light py-5 col-lg-3 mx-1">
 <p class="text-secondary">Hello,</p>
@@ -25,12 +26,13 @@ profileContainer.innerHTML = `
 </div>`;
 
 const changeAvatar = document.querySelector("#upload-avatar");
-const avatarUrlInput = document.querySelector("#avatar-link");
+
 const userName = userData.name;
-const targetUrl = `/auction/profiles/${userName}/media`;
+const targetUrl = API_BASE_URL + `/auction/profiles/${userName}/media`;
 
 changeAvatar.addEventListener("click", (event) => {
   event.preventDefault();
-
-  putMedia(targetUrl, avatarUrlInput);
+  const avatarUrlInput = document.querySelector("#avatar-link");
+  const avatarUrl = avatarUrlInput.value;
+  putMedia(targetUrl, avatarUrl);
 });
