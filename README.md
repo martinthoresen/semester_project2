@@ -46,6 +46,10 @@ git clone git@github.com:martinthoresen/semester_project2.git
 - npm run watch
 ```
 
+## Contributing
+
+If you wanna contribute to the project, make sure to open a PR so it can get reviewed.
+
 ## Contact
 
 [Mail](mailto:martin2resen@gmail.com)
