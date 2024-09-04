@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="View the newest listings and participate in auctions at the Midlands Auctionhouse" />
+    <meta name="description" content="View a single listing at the Midlands Auctionhouse" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../src/js/index.mjs" defer type="module"></script>
-    <script src="../src/js/feed/index.mjs" defer type="module"></script>
-    <title>Listings | Midlands Auctionhouse</title>
+    <script src="../src/js/listing/index.mjs" defer type="module"></script>
+    <title>| Midlands Auctionhouse</title>
   </head>
   <body>
     <header>
@@ -32,7 +32,7 @@
                 <a class="nav-link" id="loggedin-newlisting" href="../new-listing"></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../listings">Listings</a>
+                <a class="nav-link" href="../listings">Listings</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../profile" id="loggedin-profile"></a>
@@ -48,23 +48,9 @@
         </div>
       </nav>
     </header>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 bg-light py-5 mx-1">
-          <h1>Listings</h1>
-          <form class="col-6 my-5 mx-auto" id="search-feed">
-            <div class="d-flex flex-column gap-2 col">
-              <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts by title..." />
-              <button type="button" id="search-submit" class="btn btn-primary">Search</button>
-            </div>
-          </form>
-          <div id="listings-container">
-            <div class="d-flex justify-content-center">
-              <div class="spinner-border mt-5" id="spinner" role="status"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="col-lg-6 bg-light py-5 m-auto container">
+      <div class="" id="specific-listing-container"></div>
+      <a class="nav-link text-center" href="/listings">Back to feed...</a>
     </div>
     <footer>
       <p>© 2023 Midlands Auctionhouse | All Rights Reserved.</p>

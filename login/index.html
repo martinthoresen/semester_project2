@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Log in to create and participate in auctions at Midlands Auctionhouse" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/9ed23996a7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="../src/js/index.mjs" defer type="module"></script>
+    <script src="../src/js/auth/login/index.mjs" defer type="module"></script>
+    <title>Log in | Midlands Auctionhouse</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../listings"><img src="../src/images/midlands-logo.png" alt="Logo of the Midlands Auctionhouse" style="width: 12em" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../listings">View Listings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container bg-light col-lg-6 py-5">
+        <h1 class="text-center">Log in</h1>
+        <form method="post" id="login-form" action="login" class="d-flex flex-column gap-4 col-8 col-md-4 col-lg-5 col-xl-5 col-xxl-5 m-auto my-5">
+          <div class="form-group">
+            <label for="post-title">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="example@stud.noroff.no" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Log in</button>
+          <div id="login-container" class="text-center"></div>
+          <p>Don't have an account? <a href="/register/">Register here...</a></p>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>© 2023 Midlands Auctionhouse | All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
